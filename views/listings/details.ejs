@@ -1,0 +1,66 @@
+<%layout("layouts/boilerPlate")-%>
+<body>
+    <div class="details-body">
+        <div class="div-1">
+            <h1 class="title medium"><%=data.title%></h1>
+            <div class="img-container details-img">
+                <img class="square-img" src="<%=data.image.url%>" alt="">
+            </div>
+            <h4 class="description"><%=data.description%></h4>
+            <h2 class="location medium"><i class="fa-solid fa-location-dot"></i>&nbsp;at <%=data.location%>, <%=data.country%></h2>
+            <div class="rate-review">
+                <p>
+                    4.7
+                    <i class="fa-solid fa-star"></i>
+                </p>
+                &#x2022;
+                <p>
+                   238 Reviews 
+                </p>
+            </div>
+        </div>
+        
+        <div class="div-2">
+            <div class="edit-delete-div">
+                <a href="/listing/<%=data._id%>/edit">
+                    <button class="submit-btn edit-delete-btn">
+                        Edit
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                </a>
+                <form method="POST" action="/listing/<%=data._id%>?_method=DELETE">
+                    <button id="delete-btn" type="submit" class="submit-btn edit-delete-btn">
+                        Delete
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="price-card">
+                <div class="price">
+                    <h3> &#8377; <strike><%=(data.price*1.4).toLocaleString("en-IN")%></strike>&nbsp;<%=data.price.toLocaleString("en-IN")%></h3>
+                    <p>/night &nbsp;</p>
+                    <p class="discount">40% OFF</p>
+                </div>
+                <div class="check-div">
+                    <div class="check-in-out">
+                        <div class="check-in">
+                            <p>CHECK-IN</p>
+                            <p>3/10/2024</p>
+                        </div>
+                        <div class="check-out">
+                            <p>CHECK-OUT</p>
+                            <p>3/15/2024</p>
+                        </div>
+                    </div>
+                    <div class="guests">
+                        <p>GUESTS</p>
+                        <p>1 guest</p>
+                    </div>
+                </div>
+                <button class="submit-btn reserve-btn">Reserve</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../JavaScript/details.js"></script>
+</body>

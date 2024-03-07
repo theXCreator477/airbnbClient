@@ -1,0 +1,18 @@
+<% for (let i of list) { %>
+    <div class="card-body">
+        <a id="show" style="display: none;" href="/listing/<%=i._id%>"></a>
+        <div class="img-container">
+            <img class="square-img" src="<%=i.image.url%>" alt="">
+        </div>
+        <div class="info-container">
+            <h5 class="card-title medium"><%=i.title %></h5>
+            <p class="card-description"><%=i.description %></p>
+            <p class="card-price medium">&#8377; <%=i.price%>/night</p>
+            <div class="location-div medium">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="location"><%=i.location%>, <%=i.country%></p>
+            </div>
+        </div>
+        <div class="card-layer"></div>
+    </div>
+<% } %>

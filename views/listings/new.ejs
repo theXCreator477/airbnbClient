@@ -1,0 +1,41 @@
+<%layout("layouts/boilerPlate")-%>
+<body>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="container form-container">
+            <form id="add-new" method="POST" action="/listing/new">
+                <div class="row form-group">
+                    <h2>Fill the Details</h2>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12 col">
+                        <input id="title" class="form-control" type="text" placeholder="Hotel Name..." name="title" maxlength="15" required>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12 col">
+                        <textarea id="description" class="form-control" rows="" cols="" placeholder="Description..." name="description"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col col-12">
+                        <input class="form-control" id="img" type="url" placeholder="paste the link of image here..." name="imageURL">
+                    </div>
+                    <div class="form-group col-md-6 col col-12">
+                        <input class="form-control" type="number" name="price" placeholder="Price per night..." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col col-12">
+                        <input class="form-control" type="text" name="location" placeholder="City/Town..." required>
+                    </div>
+                    <div class="form-group col-md-6 col col-12">
+                        <input class="form-control" type="text" name="country" placeholder="Country...">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="submit-btn" type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
